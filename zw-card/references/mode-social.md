@@ -136,3 +136,30 @@ Avoid: text, letters, numbers, logos, watermarks, neon, robot clichés, split-sc
 封面：`{{CARD_HEIGHT}}`、`{{COVER_KICKER}}`、`{{COVER_TITLE}}`、`{{COVER_SUMMARY}}`、`{{TOPICS}}`、`{{VISUAL_SRC}}`、`{{PAGE_INFO}}`、`{{SOURCE_LINE}}`、`{{LOGO}}`、`{{BG_COLOR}}`、`{{ACCENT_COLOR}}`。
 
 将 `{{LOGO}}` 替换为本 skill `assets/avatar.png` 的 `file://` 绝对路径。用 `node assets/capture.js <html> <png> 1080 <CARD_HEIGHT>` 渲染。逐张检查标题、插画、页码、头像、姓名与来源均未裁切；核对每张 `{{VISUAL_SRC}}` 指向不同资产，并按第 3 节完成密度检查。
+
+## 6. 每次任务的经验演进
+
+每次 `-s` 任务结束前，Read `references/production-runbook.md`，并在 `work/<项目名>-source/生产记录.md` 写入一条简短、可验证的记录。无论任务完成、部分完成还是阻塞，都必须记录；不要依赖聊天记忆代替文件记录。
+
+记录模板：
+
+```markdown
+## <日期>｜<项目名>
+
+- 状态：完成 / 部分完成 / 阻塞
+- 页面与资产：<封面 + N 张正文；页码资产映射是否完整>
+- 内容与版式：<CARD_HEIGHT；逐页 VISUAL_HEIGHT；是否自然高度测量>
+- 验收：<PNG 数量与尺寸；密度 PASS/FAIL；图框抽检；3 秒/遮文/删减测试>
+- 观察：<一条具体、可复核的成功或失败现象>
+- 原因与处理：<证据支持的原因；已执行的修复或阻塞条件>
+- 候选经验：<可迁移规则；若没有，写“无”>
+```
+
+将“候选经验”提升进 `references/production-runbook.md` 的长期规则，必须同时满足：
+
+1. 来自本次真实渲染、检查或交付证据；
+2. 能说明触发条件、可观察症状和处理方式；
+3. 不依赖某篇文章的私有内容、具体人物、凭据、链接或临时目录；
+4. 不是把一次偶然通过的卡高、画风或模型输出误写成固定标准。
+
+若当前技能目录处于用户授权可维护的 Git 工作区，更新手册并提交；否则保留 `生产记录.md` 作为下次运行的候选输入，并在交付时说明全局规则尚未写回。不得声称技能已经学习，除非记录或手册确实已被保存。

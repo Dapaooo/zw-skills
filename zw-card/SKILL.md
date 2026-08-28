@@ -108,7 +108,7 @@ Read `references/mode-poster.md`，按其步骤执行。
 
 ### -s：社媒组图
 
-Read `references/mode-social.md`，按其步骤执行。
+Read `references/mode-social.md` 和 `references/production-runbook.md`，按其步骤执行。前者定义模具，后者沉淀已验证的生产经验与每次任务的演进协议。
 
 模板：`assets/social_cover_template.html`、`assets/social_card_template.html`
 
