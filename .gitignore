@@ -1,0 +1,19 @@
+# 依赖与虚拟环境
+node_modules/
+whisper_venv/
+__pycache__/
+*.pyc
+
+# 运行时缓存与数据
+scripts/audio/
+*.mp4
+*.mp3
+*.wav
+
+# 敏感配置（含真实凭据，禁止入库；用 zw_config.example.json 作模板）
+zw_config.json
+wechat_config.json
+.env
+
+# macOS
+.DS_Store
