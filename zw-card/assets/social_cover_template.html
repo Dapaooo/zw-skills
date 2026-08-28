@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --bg: {{BG_COLOR}}; --accent: {{ACCENT_COLOR}}; --ink:#24221f; --muted:#716d66; --rule:#d8d1c7; --font:'KingHwa_OldSong','PingFang SC',serif; }
+  * { box-sizing:border-box; margin:0; } html,body { width:1080px; height:{{CARD_HEIGHT}}px; overflow:hidden; background:var(--bg); }
+  .cover { width:1080px; height:{{CARD_HEIGHT}}px; padding:52px 72px 42px; position:relative; overflow:hidden; background:var(--bg); }
+  .top { display:grid; grid-template-columns:auto 1fr auto; gap:22px; align-items:center; color:var(--accent); font:600 21px/1.4 var(--font); letter-spacing:.11em; }
+  .top-rule { height:1px; background:var(--rule); }
+  .hero { position:absolute; left:0; right:0; top:540px; bottom:145px; overflow:hidden; }
+  .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg, rgba(246,241,233,.08), rgba(246,241,233,0) 45%, rgba(246,241,233,.08)); }
+  .hero img { width:100%; height:100%; object-fit:cover; display:block; }
+  .title-wrap { position:relative; z-index:2; width:900px; margin-top:48px; }
+  h1 { color:var(--ink); font:700 86px/1.06 var(--font); letter-spacing:-.065em; }
+  .summary { width:760px; margin-top:24px; color:#423e38; font:500 34px/1.45 var(--font); }
+  .topics { display:flex; flex-wrap:wrap; gap:12px; margin-top:27px; }
+  .topics span { border:1px solid rgba(164,82,53,.55); padding:10px 16px; color:var(--accent); font:500 21px/1.35 var(--font); letter-spacing:.06em; }
+  footer { position:absolute; left:72px; right:72px; bottom:42px; display:flex; justify-content:space-between; align-items:center; padding-top:23px; border-top:1px solid var(--rule); }
+  .identity { display:flex; align-items:center; gap:13px; color:var(--muted); font:400 23px/1.4 var(--font); }
+  .avatar { width:42px; height:42px; object-fit:cover; border-radius:50%; }
+  .source { max-width:510px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--muted); text-align:right; font:400 19px/1.4 var(--font); }
+</style>
+</head>
+<body><main class="cover">
+  <div class="top"><span>{{COVER_KICKER}}</span><i class="top-rule"></i><span>{{PAGE_INFO}}</span></div>
+  <section class="title-wrap"><h1>{{COVER_TITLE}}</h1><p class="summary">{{COVER_SUMMARY}}</p></section>
+  <figure class="hero"><img src="{{VISUAL_SRC}}" alt=""></figure>
+  <div class="topics">{{TOPICS}}</div>
+  <footer><div class="identity"><img class="avatar" src="{{LOGO}}" alt=""><span>张伟</span></div><span class="source">{{SOURCE_LINE}}</span></footer>
+</main></body>
+</html>

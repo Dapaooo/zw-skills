@@ -1,0 +1,4 @@
+interface:
+  display_name: "ZW Taste"
+  short_description: "Unified visual taste routing for web and content design"
+  default_prompt: "Use $zw-taste to design, improve, audit, or restyle this visual deliverable with the lightest effective workflow."

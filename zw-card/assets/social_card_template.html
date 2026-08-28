@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --bg: {{BG_COLOR}}; --accent: {{ACCENT_COLOR}}; --ink: #24221f; --muted: #716d66; --rule: #d8d1c7; --font: 'KingHwa_OldSong', 'PingFang SC', serif; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1080px; height: {{CARD_HEIGHT}}px; overflow: hidden; background: var(--bg); }
+  .card { width: 1080px; height: {{CARD_HEIGHT}}px; padding: 52px 72px 42px; display: flex; flex-direction: column; background: var(--bg); }
+  .top { display:flex; justify-content:space-between; align-items:center; padding-bottom:18px; border-bottom:1px solid var(--rule); }
+  .article { max-width:690px; color:var(--muted); font:400 22px/1.4 var(--font); letter-spacing:.08em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .page { color:var(--accent); font:600 22px/1.4 var(--font); letter-spacing:.09em; }
+  .section { margin-top:32px; color:var(--accent); font:600 20px/1.4 var(--font); letter-spacing:.15em; }
+  h1 { margin-top:14px; color:var(--ink); font:700 67px/1.12 var(--font); letter-spacing:-.05em; }
+  .rule { width:52px; height:4px; margin-top:23px; background:var(--accent); }
+  figure { height:{{VISUAL_HEIGHT}}px; margin:28px 0 25px; overflow:hidden; border-radius:26px; background:#e8e0d6; }
+  figure img { width:100%; height:100%; object-fit:cover; display:block; }
+  .body { flex:1; overflow:hidden; }
+  .body p { margin-bottom:36px; color:var(--ink); font:400 36px/1.60 var(--font); letter-spacing:.005em; }
+  .body strong { color:var(--accent); font-weight:600; }
+  .body .quote { margin:28px 0 36px; padding:0; color:#423e38; text-align:left; font:600 38px/1.48 var(--font); letter-spacing:.01em; }
+  footer { display:flex; justify-content:space-between; align-items:center; gap:18px; padding-top:23px; border-top:1px solid var(--rule); }
+  .identity { display:flex; align-items:center; gap:13px; color:var(--muted); font:400 23px/1.4 var(--font); }
+  .avatar { width:42px; height:42px; object-fit:cover; border-radius:50%; }
+  .source { max-width:510px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--muted); text-align:right; font:400 19px/1.4 var(--font); }
+</style>
+</head>
+<body>
+  <main class="card">
+    <header class="top"><span class="article">{{ARTICLE_SHORT}}</span><span class="page">{{PAGE_INFO}}</span></header>
+    <p class="section">{{SECTION_LABEL}}</p><h1>{{TITLE}}</h1><div class="rule"></div>
+    <figure><img src="{{VISUAL_SRC}}" alt=""></figure>
+    <section class="body">{{BODY_HTML}}<p class="quote">{{QUOTE}}</p></section>
+    <footer><div class="identity"><img class="avatar" src="{{LOGO}}" alt=""><span>张伟</span></div><span class="source">{{SOURCE_LINE}}</span></footer>
+  </main>
+</body>
+</html>
