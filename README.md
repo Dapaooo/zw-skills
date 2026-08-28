@@ -1,6 +1,6 @@
 # zw-skills
 
-张伟的 zw- 系列 WorkBuddy 技能集。覆盖内容创作全链路：视频总结 → 文章写作 → 文风审核 → 公众号推送 → 卡片生成。
+张伟的 zw- 系列 WorkBuddy 技能集。覆盖内容创作全链路：联网访问 → 视频总结 → 文章写作 → 文风审核 → 公众号推送 → 卡片生成 → 视觉设计与演示文稿。
 
 ## 技能清单
 
@@ -10,7 +10,10 @@
 | [zw-writes](zw-writes/) | 文章写作：主题内容 → 确认 → 成文（1500-2000 字思辨随笔），写入本地 + 同步 Obsidian |
 | [zw-wenfeng-review](zw-wenfeng-review/) | 文风与内容编排审核，输出逐项审核报告 |
 | [zw-wechat-draft](zw-wechat-draft/) | 将文章提炼为公众号图文 / 贴图草稿，推送到公众号草稿箱 |
-| [zw-card](zw-card/) | 内容铸卡：长图卡片、信息图、多卡阅读卡等 7 种形态的 PNG 视觉 |
+| [zw-card](zw-card/) | 内容铸卡：长图卡片、信息图、社媒组图等 8 种形态的 PNG 视觉 |
+| [zw-taste](zw-taste/) | 视觉品味与反模板设计：网页、文档、演示文稿、信息图等视觉产物的设计与审校 |
+| [zw-ppt](zw-ppt/) | 演示文稿制作与验证：HTML-first 高保真路线、PPTX、PDF 与逐页质检 |
+| [web-access](web-access/) | 联网访问与浏览器 CDP 自动化：搜索、网页读取、登录态交互与站点经验维护 |
 | [zw-content-flow](zw-content-flow/) | 选题内容流水线：选题 → 联网调研提炼观点 → 铸卡 → 公众号图文推送 |
 | [zw-read](zw-read/) | 低 Token 成本共读模式 |
 
@@ -49,6 +52,7 @@ cp zw-summary/scripts/zw_config.example.json zw-summary/scripts/zw_config.json
 ## 依赖
 
 - zw-card：需要 `node_modules`（playwright-core），进入目录后 `npm install`（见其 `package.json`）
+- web-access：需要 Node.js 22+；浏览器 CDP 自动化需在 Chrome 或 Edge 中启用远程调试（见其 `SKILL.md`）
 - zw-summary：Whisper 本地识别需要 Python 虚拟环境，见技能内 SKILL.md
 
 ## 维护
