@@ -1,6 +1,6 @@
 # zw-skills
 
-张伟的 zw- 系列 WorkBuddy 技能集。覆盖内容创作全链路：联网访问 → 视频总结 → 文章写作 → 文风审核 → 公众号推送 → 卡片生成 → 视觉设计与演示文稿。
+张伟的 WorkBuddy 技能集。含 zw- 系列内容创作全链路：联网访问 → 视频总结 → 文章写作 → 文风审核 → 公众号推送 → 卡片生成 → 视觉设计与演示文稿；以及得到（GetNote）大脑系列技能：安装连接、笔记管理、语义搜索、知识库与标签。
 
 ## 技能清单
 
@@ -17,6 +17,16 @@
 | [zw-content-flow](zw-content-flow/) | 选题内容流水线：选题 → 联网调研提炼观点 → 铸卡 → 公众号图文推送 |
 | [zw-read](zw-read/) | 低 Token 成本共读模式 |
 
+### 得到（GetNote）系列
+
+| 技能 | 用途 |
+|------|------|
+| [getnote-auth](getnote-auth/) | 安装与连接得到大脑：CLI 安装、浏览器授权、环境诊断、配额检查与领域 Skill 同步 |
+| [getnote-note](getnote-note/) | 得到笔记管理：保存文字 / 链接 / 图片，查看详情、原文、录音转写、附件、待办，更新 / 删除 / 分享 |
+| [getnote-search](getnote-search/) | 在得到大脑全部笔记或指定知识库中按自然语言语义搜索 |
+| [getnote-kb](getnote-kb/) | 得到大脑知识库：查看 / 管理知识库、文件夹、归档笔记、抖音博主订阅与直播 |
+| [getnote-tag](getnote-tag/) | 查看与添加笔记标签，按真实标签 ID 安全删除，避免误删系统标签 |
+
 ## 安装（其他 Agent）
 
 将技能目录放入 `~/.workbuddy/skills/` 即可，例如：
@@ -24,7 +34,7 @@
 ```bash
 git clone https://github.com/Dapaooo/zw-skills.git
 mkdir -p ~/.workbuddy/skills
-cp -r zw-skills/zw-* ~/.workbuddy/skills/
+cp -r zw-skills/zw-* zw-skills/getnote-* ~/.workbuddy/skills/
 ```
 
 ## 首次使用需自行配置
@@ -49,11 +59,24 @@ cp zw-summary/scripts/zw_config.example.json zw-summary/scripts/zw_config.json
 
 > 注意：微信公众平台有 IP 白名单限制，推送失败时需将本机出口 IP 加入白名单，详见 [zw-wechat-draft/references/deploy.md](zw-wechat-draft/references/deploy.md)。
 
+### getnote-*（得到大脑）
+
+首次使用需先安装 CLI 并登录授权：
+
+```bash
+npm install -g @getnote/cli@latest
+getnote auth login   # 浏览器确认授权
+getnote doctor -o json   # 确认 ready=true
+```
+
+详见 [getnote-auth/SKILL.md](getnote-auth/SKILL.md)。
+
 ## 依赖
 
 - zw-card：需要 `node_modules`（playwright-core），进入目录后 `npm install`（见其 `package.json`）
 - web-access：需要 Node.js 22+；浏览器 CDP 自动化需在 Chrome 或 Edge 中启用远程调试（见其 `SKILL.md`）
 - zw-summary：Whisper 本地识别需要 Python 虚拟环境，见技能内 SKILL.md
+- getnote-*：需要 Node.js 与全局 `@getnote/cli`（`npm install -g @getnote/cli@latest`），账号授权方式见 [getnote-auth/SKILL.md](getnote-auth/SKILL.md)
 
 ## 维护
 
